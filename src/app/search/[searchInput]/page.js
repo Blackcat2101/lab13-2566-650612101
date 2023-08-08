@@ -10,7 +10,7 @@ export default function SearchResultPage({ params }) {
   const filteredMovies = movieDB.filter((movie) =>
     movie.title
       .toLocaleLowerCase()
-      .includes(processedSearchInput.lowerCaseSearchInput())
+      .includes(processedSearchInput.toLocaleLowerCase())
   );
 
   return (
