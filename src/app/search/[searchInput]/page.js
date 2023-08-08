@@ -8,15 +8,13 @@ export default function SearchResultPage({ params }) {
   const processedSearchInput = params.searchInput.replaceAll("%20", " ");
 
   const filteredMovies = movieDB.filter((movie) =>
-    movie.title
-      .toLocaleLowerCase()
-      .includes(processedSearchInput.toLocaleLowerCase())
+    movie.title.toLowerCase().includes(processedSearchInput.toLowerCase())
   );
 
   return (
     <div>
       <p className="fw-bold fs-4 text-center my-0">
-        Searching &quot;{processedSearchInput}&quot;
+        Searching &quot; {processedSearchInput} &quot;
       </p>
       <p className="fw-bold fs-4 text-center">
         Found {filteredMovies.length} result(s)
