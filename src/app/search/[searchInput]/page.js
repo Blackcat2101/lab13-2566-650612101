@@ -7,15 +7,11 @@ export default function SearchResultPage({ params }) {
   //tip1 : before filtering movie, replace all "%20" with " " (space) in the input
   const processedSearchInput = params.searchInput.replaceAll("%20", " ");
 
-  const filterMovies = () => {
-    const lowerCaseSearchInput = processedSearchInput.toLocaleLowerCase();
-    const filteredMovies = movieDB.filter((movie) =>
-      movie.title.toLocaleLowerCase().includes(lowerCaseSearchInput)
-    );
-    return filteredMovies;
-  };
-
-  const filteredMovies = filterMovies();
+  const filteredMovies = movieDB.filter((movie) =>
+    movie.title
+      .toLocaleLowerCase()
+      .includes(processedSearchInput.lowerCaseSearchInput())
+  );
 
   return (
     <div>
